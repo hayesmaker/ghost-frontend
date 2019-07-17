@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Ghost Writer
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,4 +11,15 @@
     The world is your oyster.
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <ion-item>
+      <ion-label>Enter Some Text Yo:</ion-label>
+      <ion-input type="text" name="someText" ngModel required></ion-input>
+    </ion-item>
+    <ion-button type="submit" [disabled]="form.invalid">Submit</ion-button>
+  </form>
+  <hr />
+  <ion-item>
+    <ion-label>Last Added Text: {{lastText}}</ion-label>
+  </ion-item>
 </ion-content>
